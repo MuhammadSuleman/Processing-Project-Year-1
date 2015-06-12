@@ -1,0 +1,51 @@
+class Clock {
+  //array of months
+  String [] monthString= {
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", 
+    "Sep", "Oct", "Nov", "Dec"
+  };
+  //variables
+  int s=0;
+
+
+  void draw()
+  {
+    //built in functions
+    int h= hour();
+    s = second();
+    String date ="";
+    int d = day();
+    int m = month();  // Values from 1 - 12
+    int y = year(); 
+
+    date=monthString[m-1];
+
+    pushMatrix();
+    
+    textAlign(CENTER);
+    //this displays the day, month and year
+    textSize(30);
+    date += " " + d + " "+y+"\n";
+    //if the hour is less than 10, it puts a zero infronnt of it
+    if (hour() < 10) {
+      date +="0";
+    }
+    //if the minute is less than 10, it puts a zero infront of it
+    date+= hour() +  ":";
+    if (minute()<10) {
+      date+="0";
+    }
+    //if the seconds is less than 10, it puts a zero infront of it
+    date+=minute()+":";
+    if (second()<10) {
+      date+="0";
+    }
+    date+= second();
+    //this displays the date, which includes, the month name and the year along with the time
+    text(date, 130, 220);
+    textSize(100);
+    //this is for the big date
+    text(d, 130, 160);
+    popMatrix();
+  }
+}
