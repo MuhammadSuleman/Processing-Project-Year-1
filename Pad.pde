@@ -8,27 +8,27 @@ class Pad {
 
   Pad () {
     pushMatrix();
-    //      reader = createReader("notes.txt"); 
-    //
-    //  String line; 
-    //  boolean lineFound = false;
-    //  //using try and catch method to read in the lines
-    //  try {
-    //    do {
-    //      line = reader.readLine();
-    //      if (line.length() > 0) {
-    //        println("line: " + line);
-    //        lineFound = true;
-    //      }
-    //    }
-    //    //if there are still lines in the txt file the while loop carries on running
-    //    while ( line != null && !lineFound);
-    //  } 
-    //  catch (IOException e) {
-    //    e.printStackTrace();
-    //    line = null;
-    //    exit();
-    //  }
+          reader = createReader("notes.txt"); 
+    
+      String line; 
+      boolean lineFound = false;
+      //using try and catch method to read in the lines
+      try {
+        do {
+          line = reader.readLine();
+          if (line.length() > 0) {
+            println("line: " + line);
+            lineFound = true;
+          }
+        }
+        //if there are still lines in the txt file the while loop carries on running
+        while ( line != null && !lineFound);
+      } 
+      catch (IOException e) {
+        e.printStackTrace();
+        line = null;
+        exit();
+      }
 
     //this reads out the data from the sketch
     output = createWriter("notes.txt");
